@@ -1,4 +1,6 @@
-# [**HendyHealth**](https://banzay700.github.io/StepProject-HendyHealth/)
+# [**HendyHealth**](https://basiuk-ivan.github.io/JS-Hendy-Health-vebSite/)
+### Login - hendyHealth@gmail.com
+### Password - 123456
 
 [**HendyHealth**](https://banzay700.github.io/StepProject-HendyHealth/) is a program designed for clinic administrators to register new visitors. The program allows the user to add, delete, and edit records of patients or visitors to the clinic. All data recorded in the application is stored in a database on the server.
 
