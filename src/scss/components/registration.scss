@@ -1,0 +1,179 @@
+.login-image {
+  img {
+    max-width: 100%;
+  }
+}
+
+.login-form {
+  height: 110px;
+  width: 410px;
+  padding: 31px 18px;
+  background-color: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+// ============= form-header ===============
+
+.form-head {
+  color: color(text, 'accent');
+
+  &__title {
+    margin-bottom: 30px;
+    @include fontProperties(800, 40, 49, null);
+  }
+
+  &__slogan {
+    position: relative;
+    padding-left: 83px;
+    margin-bottom: 30px;
+    @include fontProperties(600, 15, 18, null);
+
+    &:before {
+      border-radius: 5px;
+      background-color: color(background, 'accent');
+      @include position(absolute, 7px, 0, 70px, 4px);
+    }
+  }
+
+  &__actions {
+    color: $mainColor;
+    margin-bottom: 20px;
+    @include fontProperties(600, 16, 20);
+    @include flexProperties(center, center, null, 23px);
+
+    div {
+      padding: 11px 11px 11px 4px;
+      min-width: 180px;
+      text-align: center;
+      border: 1px solid #e0e1e3;
+      box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+      border-radius: 8px;
+      transition: box-shadow 0.3s;
+      cursor: pointer;
+
+      img {
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background-color: #fafafa;
+        box-shadow: 0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16);
+      }
+    }
+  }
+
+  &__decor {
+    position: relative;
+    text-align: center;
+    margin-bottom: 25px;
+    color: color(text, 'grey');
+
+    &::after,
+    &::before {
+      background-color: #e0e1e3;
+      @include position(absolute, 9px, null, 165px, 1px);
+    }
+
+    &::after {
+      left: 0;
+    }
+    &::before {
+      right: 0;
+    }
+  }
+}
+
+// ============= form-base ==============
+
+.form {
+  position: relative;
+  @include flexProperties(center, null, column, 26px);
+
+  input {
+    min-height: 43px;
+    min-width: 298px;
+    padding: 9px;
+    border: 1px solid #e0e1e3;
+    border-radius: 8px;
+    color: color(text);
+    transition: all 0.3s;
+    @include fontProperties(500, 15, 16);
+
+    &::placeholder {
+      color: color(text, 'grey');
+      @include fontProperties(500, 15, 16);
+    }
+
+    &:focus {
+      box-shadow: 0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16);
+    }
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 11px;
+  align-self: start;
+  margin-left: 10px;
+
+  input {
+    display: none;
+  }
+
+  span {
+    color: color(text);
+    @include fontProperties(600, 10, 14);
+    @include position(absolute, 0, 31px, 81px, null);
+  }
+}
+
+.slider {
+  cursor: pointer;
+  background-color: #d9e4e5;
+  transition: 0.4s;
+  border-radius: 34px;
+  right: 0;
+  bottom: 0;
+  @include position(absolute, 0, 0, null, null);
+
+  &:before {
+    bottom: -3px;
+    transition: 0.4s;
+    border-radius: 50%;
+    background-color: #20a4b6;
+    @include position(absolute, null, -3px, 17px, 17px);
+  }
+}
+
+.login-error {
+  display: none;
+  color: color(text, 'error');
+  @include position(absolute, 138px, 184px, null, null);
+  @include fontProperties(600, 10, 15);
+}
+
+input:checked + .slider {
+  background-color: #9ed2d7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(13px);
+}
+
+.fade-in {
+  animation: 0.5s fadeIn forwards;
+  animation-duration: 0.7s;
+}
+
+@keyframes fadeIn {
+  to {
+    background-color: #fff;
+    height: 537px;
+    box-shadow: 0 7px 20px rgba(40, 41, 61, 0.08);
+  }
+}

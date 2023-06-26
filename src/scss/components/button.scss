@@ -1,0 +1,37 @@
+.button {
+  padding: 15px;
+  border-radius: 4px;
+  color: color(text, 'white');
+  background-color: color(background, 'accent');
+  transition: background-color 0.3s;
+  @include fontProperties(600, 13, 16);
+
+  &:hover {
+    background-color: #348a96;
+  }
+}
+
+.log-in {
+  min-width: 369px;
+}
+
+.header-login,
+.register {
+  height: 46px;
+  width: 162px;
+}
+
+.save,
+.cancel {
+  width: 66px;
+  height: 34px;
+}
+
+.cancel {
+  background-color: #cccccc;
+}
+
+.covid-button-show {
+  width: 180px;
+  height: 45px;
+}

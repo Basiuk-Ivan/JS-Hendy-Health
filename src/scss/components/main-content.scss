@@ -1,0 +1,43 @@
+.main-content {
+  height: 100%;
+  width: 100%;
+}
+
+.body-cards-info {
+  display: flex;
+  gap: 30px;
+  margin-top: 36px;
+  margin-bottom: 31px;
+}
+
+.info-card,
+.body-table {
+  background: #ffffff;
+  box-shadow: 0 12px 26px rgba(16, 30, 115, 0.06);
+  border-radius: 8px;
+}
+
+.body-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.body-bord {
+  background: #ffffff;
+  box-shadow: 0 12px 26px rgba(16, 30, 115, 0.06);
+  border-radius: 8px;
+  margin-right: 30px;
+}
+
+.body-tables {
+  @include flexProperties(center, center, column, 10px);
+}
+
+.body-table {
+  margin-right: 30px;
+}
+
+.fade-out {
+  display: block;
+}

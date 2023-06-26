@@ -1,0 +1,425 @@
+.dashboard {
+  height: 100%;
+  padding: 0 31px 15px;
+  @include flexProperties(null, null, column, 5px);
+}
+
+//============== DASHBOARD-HEADER ===============
+
+.dashboard-header {
+  margin: 5px 0 13px 0;
+  @include flexProperties(center, space-between, null, 20px);
+
+  .card-image-wrap {
+    width: 40px;
+    height: 44px;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  div:nth-child(4) {
+    min-width: 295px;
+    max-width: 290px;
+  }
+
+  span {
+    color: color(text, 'accent');
+    @include fontProperties(null, 18, 24);
+  }
+
+  .header-card {
+    width: 30%;
+    gap: 24px;
+    display: flex;
+    padding: 20px 1.3%;
+    border-radius: 8px;
+    background-color: color(background, 'secondary');
+    box-shadow: 0 7px 20px rgba(40, 41, 61, 0.11);
+    transition: box-shadow 0.25s;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.19);
+    }
+  }
+
+  .card-content {
+    @include flexProperties(null, null, column);
+    span {
+      transition: all 0.8s;
+    }
+  }
+
+  .card-title {
+    @include fontProperties(700, 14, 20);
+  }
+}
+
+.dashboard-content {
+  display: flex;
+  height: 100%;
+}
+
+//==================== DASHBOARD-TABLE ===================
+
+.dashboard-table {
+  height: calc(100vh - 190px);
+  padding: 3px;
+  flex: 1 1 auto;
+  border-radius: 8px;
+  background-color: color(background, 'secondary');
+  box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.11);
+  @include flexProperties(null, null, column);
+}
+
+.table-title {
+  padding: 20px 8px 18px;
+  @include fontProperties(700, 20, 26);
+}
+
+.status {
+  cursor: pointer;
+}
+
+.table-head {
+  padding: 16px 8px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #dbdde0;
+  @include fontProperties(600, 14, 20);
+
+  div {
+    text-align: left;
+    display: inline-block;
+  }
+
+  div:nth-child(1) {
+    width: 22%;
+  }
+
+  div:nth-child(2) {
+    width: 15%;
+    position: relative;
+    cursor: pointer;
+
+    .filter-icon {
+      @include position(absolute, 5px, 91px, 11px, 11px);
+    }
+
+    .filter-wrapper {
+      display: none;
+      padding-top: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      overflow: hidden;
+      border-radius: 4px;
+      background-color: transparent;
+      @include position(absolute, 18px, -10px, 137px, 110px);
+
+      span:nth-child(1) {
+        border-top: 1px solid #dbdde0;
+      }
+    }
+
+    .drop-item {
+      display: block;
+      border-radius: 4px;
+      padding: 5px;
+      border-right: 1px solid #dbdde0;
+      border-bottom: 1px solid #dbdde0;
+      border-left: 2px solid #dbdde0;
+      background: white;
+      color: color(text);
+      transition: all 0.25s;
+
+      &:hover {
+        color: color(text, 'accent');
+        border-left: 2px solid color(text, 'accent');
+        background: white;
+      }
+    }
+
+    &:hover {
+      color: color(text, 'accent');
+    }
+
+    &:hover .filter-icon {
+      filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+    }
+
+    &:hover .filter-wrapper {
+      display: block;
+    }
+  }
+
+  div:nth-child(3) {
+    width: 18%;
+  }
+
+  div:nth-child(4) {
+    width: 15%;
+  }
+
+  div:nth-child(5) {
+    width: 10%;
+    height: 19px;
+    position: relative;
+    cursor: pointer;
+
+    .filter-icon {
+      @include position(absolute, 5px, 55px, 11px, 11px);
+    }
+
+    .filter-wrapper {
+      display: none;
+      padding-top: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      overflow: hidden;
+      border-radius: 4px;
+      background-color: transparent;
+      @include position(absolute, 18px, -10px, 137px, 110px);
+
+      span:nth-child(1) {
+        border-top: 1px solid #dbdde0;
+      }
+    }
+
+    .drop-item {
+      display: block;
+      border-radius: 4px;
+      border-right: 1px solid #dbdde0;
+      border-bottom: 1px solid #dbdde0;
+      border-left: 2px solid #dbdde0;
+      background: white;
+      color: color(text);
+      transition: all 0.25s;
+
+      &:hover {
+        color: color(text, 'accent');
+        border-left: 2px solid color(text, 'accent');
+        background: white;
+      }
+    }
+
+    &:hover {
+      color: color(text, 'accent');
+    }
+
+    &:hover .filter-icon {
+      filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+    }
+
+    &:hover .filter-wrapper {
+      display: block;
+    }
+  }
+
+  div:nth-child(6) {
+    width: 9%;
+    height: 19px;
+    position: relative;
+    cursor: pointer;
+
+    .filter-icon {
+      @include position(absolute, 5px, 49px, 11px, 11px);
+    }
+
+    .filter-wrapper {
+      display: none;
+      padding-top: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      overflow: hidden;
+      border-radius: 4px;
+      background-color: transparent;
+      @include position(absolute, 18px, -10px, 137px, 110px);
+
+      span:nth-child(1) {
+        border-top: 1px solid #dbdde0;
+      }
+    }
+
+    .drop-item {
+      display: block;
+      border-radius: 4px;
+      border-right: 1px solid #dbdde0;
+      border-bottom: 1px solid #dbdde0;
+      border-left: 2px solid #dbdde0;
+      background: white;
+      color: color(text);
+      transition: all 0.25s;
+
+      &:hover {
+        color: color(text, 'accent');
+        border-left: 2px solid color(text, 'accent');
+        background: white;
+      }
+    }
+
+    &:hover {
+      color: color(text, 'accent');
+    }
+
+    &:hover .filter-icon {
+      filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+    }
+
+    &:hover .filter-wrapper {
+      display: block;
+    }
+  }
+
+  div:nth-child(7) {
+    position: relative;
+    width: 11%;
+
+    .refresh-icon {
+      cursor: pointer;
+      transition: all 0.25s;
+      @include position(absolute, -61px, 54px, 20px, 20px);
+
+      &:hover {
+        filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+      }
+    }
+  }
+}
+
+.table-list {
+  height: 83%;
+  width: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.appointment {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #dbdde0;
+  @include flexProperties(center);
+  @include fontProperties(400, 14, 20);
+
+  div {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .name {
+    gap: 5px;
+    width: 22%;
+    @include flexProperties(center);
+  }
+
+  .avatar {
+    height: 40px;
+    width: 40px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .department {
+    width: 15%;
+  }
+
+  .doctor {
+    width: 18%;
+  }
+
+  .tel {
+    width: 15%;
+  }
+
+  .priority {
+    width: 10%;
+  }
+
+  .status {
+    width: 9%;
+  }
+
+  .status-close {
+    width: 9%;
+    color: color(text, 'error');
+  }
+
+  .actions {
+    width: 11%;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+
+    .icon-container {
+      padding-top: 2px;
+      width: 14px;
+      height: 24px;
+      cursor: pointer;
+
+      img {
+        min-width: 100%;
+      }
+      .icon-delete {
+        &:hover {
+          filter: invert(62%) sepia(82%) saturate(2543%) hue-rotate(306deg) brightness(102%) contrast(101%);
+        }
+      }
+      &:hover {
+        filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+      }
+    }
+
+    .icon-container:nth-child(3) {
+      &:hover {
+        filter: invert(62%) sepia(82%) saturate(2543%) hue-rotate(306deg) brightness(102%) contrast(101%);
+      }
+    }
+  }
+
+  &:hover {
+    background-color: rgba(246, 246, 246, 0.34);
+  }
+}
+
+.hidden-item {
+  display: none;
+}
+
+.tab-active {
+  background-color: color(background, 'accent');
+}
+
+//==================== DASHBOARD-ACTIONS ===================
+
+.dashboard-actions {
+  width: 298px;
+  height: 100%;
+  margin-left: 20px;
+  @include flexProperties(end, flex-start, column, 2%);
+}
+
+.dashboard-table-wrapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 295px;
+  height: 49%;
+  box-shadow: 0 7px 20px rgba(40, 41, 61, 0.11);
+  transition: box-shadow 0.25s;
+
+  &:hover {
+    box-shadow: 0 7px 20px rgba(40, 41, 61, 0.2);
+  }
+}
+
+.nodata-image {
+  display: block;
+  max-width: 35%;
+  margin: 10% auto;
+}
+
+//==================== FILTER ===========================

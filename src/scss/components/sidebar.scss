@@ -1,0 +1,131 @@
+.sidebar {
+  display: none;
+  background-color: white;
+  box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+  border-radius: 0 0 5px 0;
+  clip-path: inset(-1px -48.8px -18.23px 0px);
+  transition: all 1s;
+}
+
+.sidebar-content {
+  height: 100%;
+  width: 262px;
+  @include flexProperties(normal, flex-start, column);
+}
+
+.sidebar-menu {
+  flex: 1 1 auto;
+}
+
+.menu-title {
+  color: color(text, 'grey');
+  padding-left: 24px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  @include fontProperties(400, 14, 20, Montserrat);
+}
+
+.support-line {
+  border-top: 1px solid #a0a4a8;
+  margin: 20px 0 16px 0;
+  opacity: 0.3;
+}
+
+.menu-support {
+  color: color(text, 'grey');
+  margin-bottom: 20px;
+  padding-left: 24px;
+  @include fontProperties(400, 14, 20, Montserrat);
+}
+
+.sidebar-list {
+  fill: color(text, 'grey');
+  padding-left: 24px;
+  @include flexProperties(normal, flex-start, column, 20px);
+
+  img {
+    width: 16px;
+  }
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.45s;
+
+  img {
+    margin-right: 8px;
+  }
+
+  &:hover {
+    filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+  }
+  @include fontProperties(500, 14, 20, Montserrat);
+}
+
+// =========== COVID =============== //
+
+.sidebar-covid {
+  flex: 1 1 auto;
+  @include flexProperties(normal, center, column);
+}
+
+.covid-body {
+  min-height: 255px;
+  width: 225px;
+  border-radius: 10px;
+  margin: 0 20px 0 18px;
+  padding: 0 20px;
+  background-image: url('../assets/images/covid/covid-bg.jpg');
+  background-size: 238px 379px;
+  font-size: 15px;
+  @include flexProperties(normal, flex-start, column, 14px);
+}
+
+.covid-title {
+  position: relative;
+  margin-top: 20px;
+  @include fontProperties(600, 18, 20, Montserrat);
+}
+
+.covid-icon {
+  width: 200px;
+  @include flexProperties(center, flex-start, null, 5px);
+}
+
+.covid-icon {
+  color: color(text, 'accent');
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.covid-info {
+  margin-top: 5px;
+  @include flexProperties(normal, flex-start, column, 10px);
+
+  .covid-button {
+    margin-top: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+// =========== FOOTER =============== //
+
+.sidebar-footer {
+  margin: 19px 15px 12px 15px;
+}
+
+.sidebar-footer-title {
+  margin-bottom: 6px;
+  @include fontProperties(500, 18, 20, Montserrat);
+}
+
+.sidebar-footer-text {
+  color: color(text, 'grey');
+  @include fontProperties(400, 12, 20, Montserrat);
+}

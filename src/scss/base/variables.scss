@@ -1,0 +1,20 @@
+$color-key: 'base' !default;
+$colors: (
+  text: (
+    'base': #52575c,
+    'dark': #25282b,
+    'grey': #a0a4a8,
+    'white': #ffffff,
+    'accent': #20a5b6,
+    'error': #ff6b93,
+  ),
+  background: (
+    'base': #f6f8fb,
+    'secondary': #ffffff,
+    'accent': #20a4b6,
+  ),
+);
+
+$fontFamily: 'Montserrat';
+$fontSize: 14px;
+$mainColor: color(text);

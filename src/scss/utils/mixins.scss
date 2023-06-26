@@ -1,0 +1,25 @@
+@use 'sass:math';
+
+@mixin fontProperties($fontWeight: $fontWeight, $fontSize, $lineHeight, $fontFamily: $fontFamily) {
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  font-size: $fontSize + px;
+  line-height: math.div($lineHeight, $fontSize);
+}
+
+@mixin flexProperties($align: normal, $justify: flex-start, $direction: row, $gap: none) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin position($position, $top, $left, $width, $height) {
+  position: $position;
+  content: '';
+  left: $left;
+  top: $top;
+  height: $height;
+  width: $width;
+}

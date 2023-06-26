@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+@function color($name: 'primary', $variant: $color-key, $opacity: 1) {
+  $color: null;
+  $color-spectrum: map-get($colors, $name);
+
+  @if $color-spectrum {
+    $color: map-get($color-spectrum, $variant);
+  }
+
+  $alpha: if(type-of($opacity) == 'number', $opacity, map-get($u-opacity, $opacity));
+
+  @if $alpha {
+    $color: rgba($color, $alpha);
+  }
+
+  @return $color;
+}
